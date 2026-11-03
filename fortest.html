@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, and JavaScript Test Notes</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #203047;
+            --muted: #52647a;
+            --paper: #ffffff;
+            --page: #f2f6fb;
+            --accent: #2459a6;
+            --line: #d7e1ee;
+            --code: #edf3fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 24px;
+            background: var(--page);
+            color: var(--ink);
+            font: 16px/1.65 system-ui, sans-serif;
+        }
+
+        header, section, footer {
+            margin-bottom: 24px;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--paper);
+            box-shadow: 0 3px 12px rgb(32 48 71 / 6%);
+        }
+
+        h1, h2, h3 {
+            line-height: 1.25;
+        }
+
+        h1, h2 {
+            color: var(--accent);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin: 6px 0 14px;
+        }
+
+        code, pre {
+            border-radius: 6px;
+            background: var(--code);
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        code {
+            padding: 2px 5px;
+        }
+
+        pre {
+            overflow-x: auto;
+            margin: 10px 0 18px;
+            padding: 14px;
+            line-height: 1.5;
+        }
+
+        pre code {
+            padding: 0;
+            background: transparent;
+        }
+
+        .answer {
+            margin-bottom: 16px;
+        }
+
+        .tip {
+            padding: 12px 16px;
+            border-left: 4px solid var(--accent);
+            background: #f3f7fd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+        }
+
+        th, td {
+            padding: 9px;
+            border: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #edf3fa;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            header, section, footer {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Test Study Notes: HTML, CSS, and JavaScript</h1>
+        <p>Review the key ideas, then practice reading and writing the examples. HTML gives content structure, CSS controls presentation, and JavaScript adds behavior.</p>
+        <p class="tip"><strong>Test tip:</strong> Know what each element or method does, when to use it, and how to recognize common mistakes such as a missing form label or an unclosed tag.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Lecture 04: HTML Lists and Tables</h2>
+            <div class="answer">
+                <h3>Ordered and unordered lists</h3>
+                <p>An <strong>ordered list</strong> uses <code>&lt;ol&gt;</code> when sequence matters (steps, rankings); browsers usually number it. An <strong>unordered list</strong> uses <code>&lt;ul&gt;</code> when the order does not matter; browsers usually show bullets. Each list item goes in an <code>&lt;li&gt;</code>.</p>
+                <pre><code>&lt;ol&gt;
+  &lt;li&gt;Open the page&lt;/li&gt;
+  &lt;li&gt;Fill in the form&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Notebook&lt;/li&gt;
+  &lt;li&gt;Pencil&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Description lists</h3>
+                <p><code>&lt;dl&gt;</code> groups terms and descriptions. <code>&lt;dt&gt;</code> is a term or name, and <code>&lt;dd&gt;</code> is its description or value.</p>
+                <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;The language used to structure web content.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Tables and their elements</h3>
+                <p>Use an HTML table to present data with meaningful row-and-column relationships, not to lay out an entire page.</p>
+                <ul>
+                    <li><code>&lt;table&gt;</code> contains the table.</li>
+                    <li><code>&lt;tr&gt;</code> creates a table row.</li>
+                    <li><code>&lt;th&gt;</code> marks a header cell (for a column or row).</li>
+                    <li><code>&lt;td&gt;</code> marks a regular data cell.</li>
+                    <li><code>&lt;caption&gt;</code> gives the table an accessible, visible title or summary.</li>
+                </ul>
+                <p><code>colspan</code> makes a cell span multiple columns; <code>rowspan</code> makes it span multiple rows. Semantic headers help people understand what data cells refer to, and help assistive technology and browsers interpret the table. Use <code>scope="col"</code> or <code>scope="row"</code> to clarify a header's direction.</p>
+                <pre><code>&lt;table&gt;
+  &lt;caption&gt;Quiz scores&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope="col"&gt;Student&lt;/th&gt;
+    &lt;th scope="col"&gt;Score&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope="row"&gt;Ari&lt;/th&gt;
+    &lt;td&gt;92&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2"&gt;One student shown&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 05: Multimedia and Embedded Content</h2>
+            <div class="answer">
+                <h3>Images and responsive image choices</h3>
+                <p>Use <code>&lt;img&gt;</code> to embed an image. Give it a useful <code>alt</code> description when it conveys information; use <code>alt=""</code> when it is purely decorative.</p>
+                <pre><code>&lt;img src="garden.jpg" alt="Sunflowers growing in a garden" loading="lazy"&gt;</code></pre>
+                <p><code>&lt;picture&gt;</code> wraps one or more <code>&lt;source&gt;</code> choices and a fallback <code>&lt;img&gt;</code>. The browser selects a suitable image based on conditions such as screen size or supported format. A plain <code>&lt;img&gt;</code> displays one image; <code>&lt;picture&gt;</code> lets you art-direct or offer alternate formats.</p>
+                <pre><code>&lt;picture&gt;
+  &lt;source media="(min-width: 800px)" srcset="wide.jpg"&gt;
+  &lt;img src="small.jpg" alt="A mountain at sunrise"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Audio, video, sources, and tracks</h3>
+                <p><code>&lt;audio&gt;</code> embeds sound; <code>&lt;video&gt;</code> embeds video. Add <code>controls</code> to provide playback controls. A <code>&lt;source&gt;</code> inside a media element offers a file and MIME type; the browser tries supported choices in order. A <code>&lt;source&gt;</code> inside <code>&lt;picture&gt;</code> provides an image choice.</p>
+                <p><code>&lt;track&gt;</code> supplies timed text such as subtitles, captions, descriptions, or chapters for audio/video. Captions include relevant non-speech sounds; subtitles commonly translate spoken dialogue. Alternative text and captions make content more accessible to people who cannot see or hear it, and text alternatives also help when media fails to load.</p>
+                <pre><code>&lt;video controls&gt;
+  &lt;source src="lesson.mp4" type="video/mp4"&gt;
+  &lt;track kind="captions" src="lesson-en.vtt"
+         srclang="en" label="English"&gt;
+  Your browser does not support video.
+&lt;/video&gt;</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Lazy loading</h3>
+                <p><code>loading="lazy"</code> asks the browser to defer loading an image or iframe until it is near the visible part of the page. This can save data and speed up initial loading. Avoid lazy-loading important above-the-fold images, such as a page's main hero image.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 06: Hyperlinks and Local Domains</h2>
+            <div class="answer">
+                <h3>Links and URLs</h3>
+                <p>A <strong>hyperlink</strong> connects a page or resource to another destination. The <code>&lt;a&gt;</code> (anchor) element creates the link, and its <code>href</code> attribute gives the destination.</p>
+                <p>An <strong>absolute URL</strong> includes the full address, such as <code>https://example.com/about.html</code>. A <strong>relative URL</strong> is resolved from the current page or site location, such as <code>about.html</code> or <code>../images/photo.jpg</code>. To link to another page in the same project, use its relative path.</p>
+                <pre><code>&lt;a href="about.html"&gt;About this site&lt;/a&gt;
+&lt;a href="#contact"&gt;Jump to contact section&lt;/a&gt;
+
+&lt;h2 id="contact"&gt;Contact&lt;/h2&gt;
+
+&lt;a href="mailto:hello@example.com"&gt;Email us&lt;/a&gt;</code></pre>
+                <p>A fragment such as <code>#contact</code> jumps to the element whose <code>id</code> is <code>contact</code>. <code>mailto:</code> opens the user's configured email application.</p>
+            </div>
+            <div class="answer">
+                <h3>Opening external links safely</h3>
+                <p><code>target="_blank"</code> requests that the destination open in a new tab or window. For an external link opened this way, <code>rel="noopener noreferrer"</code> prevents the new page from controlling the originating page through <code>window.opener</code>; <code>noreferrer</code> also withholds referrer information.</p>
+                <pre><code>&lt;a href="https://example.com"
+   target="_blank" rel="noopener noreferrer"&gt;
+  Visit Example
+&lt;/a&gt;</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 07: HTML Forms</h2>
+            <div class="answer">
+                <h3>Form elements and attributes</h3>
+                <p>An HTML form collects user input for processing or submission. <code>&lt;form&gt;</code> groups the controls; <code>&lt;input&gt;</code> creates many kinds of controls; <code>&lt;label&gt;</code> names a control; <code>&lt;textarea&gt;</code> accepts multi-line text; and <code>&lt;button&gt;</code> creates a button.</p>
+                <p><code>action</code> specifies where the form submits. <code>method</code> specifies how it submits:</p>
+                <ul>
+                    <li><strong>GET</strong> places form data in the URL query string. Use it for retrieval/search when appropriate; URLs may be bookmarked and shared, so do not use it for secrets.</li>
+                    <li><strong>POST</strong> sends form data in the request body. It is commonly used to submit or change data. POST alone does not encrypt data; HTTPS is needed for transport security.</li>
+                </ul>
+                <p>Common input types include <code>text</code>, <code>password</code>, <code>email</code>, <code>number</code>, <code>checkbox</code>, <code>radio</code>, <code>date</code>, <code>file</code>, and <code>submit</code>.</p>
+                <ul>
+                    <li><code>id</code> uniquely identifies an element in the page and can connect it to a label.</li>
+                    <li><code>name</code> is the key used for that control's submitted data.</li>
+                    <li><code>value</code> is the control's current or submitted value.</li>
+                </ul>
+                <p><code>required</code> makes a control need a value before a browser will submit the form. Form validation checks that input meets rules, such as being required or matching an email format; client-side validation improves usability but does not replace server-side validation.</p>
+            </div>
+            <div class="answer">
+                <h3>Labels, dropdowns, and a complete example</h3>
+                <p>Connect a label to an input by making the label's <code>for</code> value exactly match the input's <code>id</code>. Clicking the label then focuses or activates its control.</p>
+                <pre><code>&lt;form action="/signup" method="post"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required&gt;
+
+  &lt;label for="message"&gt;Message&lt;/label&gt;
+  &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+
+  &lt;label for="topic"&gt;Topic&lt;/label&gt;
+  &lt;select id="topic" name="topic"&gt;
+    &lt;option value="html"&gt;HTML&lt;/option&gt;
+    &lt;option value="css"&gt;CSS&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Sign up&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <p>A dropdown uses <code>&lt;select&gt;</code> to contain <code>&lt;option&gt;</code> choices. Use a button's <code>type</code> deliberately: <code>submit</code> submits a form, while <code>button</code> does not submit by default.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 08: CSS Fundamentals</h2>
+            <div class="answer">
+                <h3>What CSS does and where to write it</h3>
+                <p>CSS (Cascading Style Sheets) describes how HTML content looks and is laid out. The three ways to write CSS are:</p>
+                <ul>
+                    <li><strong>Inline:</strong> a <code>style</code> attribute on one element. Convenient for a one-off, but hard to reuse and maintain.</li>
+                    <li><strong>Internal:</strong> rules inside a <code>&lt;style&gt;</code> element, usually in the document's <code>&lt;head&gt;</code>.</li>
+                    <li><strong>External:</strong> rules in a separate <code>.css</code> file, linked from HTML. Best for reuse and keeping content separate from presentation.</li>
+                </ul>
+                <pre><code>&lt;!-- In the HTML head --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+&lt;!-- Example rules in styles.css --&gt;
+p { color: #333; }
+.notice { background-color: #fff3cd; }
+#main-title { font-size: 2rem; }</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Selectors, cascade, specificity, and inheritance</h3>
+                <ul>
+                    <li>An <strong>element selector</strong>, such as <code>p</code>, selects all elements of that type.</li>
+                    <li>A <strong>class selector</strong>, such as <code>.notice</code>, selects elements with that class; classes can be reused.</li>
+                    <li>An <strong>ID selector</strong>, such as <code>#main-title</code>, selects the element with that ID; IDs should be unique in a page.</li>
+                </ul>
+                <p>The <strong>cascade</strong> decides which declarations apply when rules overlap. It considers origin and importance, selector specificity, and then source order when the earlier factors tie. <strong>Specificity</strong> is the selector's priority: IDs outweigh classes/attributes, which outweigh element selectors. Prefer simple selectors and avoid relying on <code>!important</code>.</p>
+                <p><strong>Inheritance</strong> means some properties (often text-related properties like <code>color</code> and <code>font-family</code>) pass from a parent to descendants unless overridden. Many box and layout properties do not inherit by default.</p>
+            </div>
+            <div class="answer">
+                <h3>Box model and spacing</h3>
+                <p>The CSS box model describes an element as <strong>content → padding → border → margin</strong>. Padding is space inside the border, around content; margin is space outside the border, separating the element from others. With <code>box-sizing: border-box</code>, declared width and height include padding and border.</p>
+                <table>
+                    <tr><th>Need to style</th><th>Common properties</th></tr>
+                    <tr><td>Text</td><td><code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>text-align</code>, <code>line-height</code></td></tr>
+                    <tr><td>Background</td><td><code>background-color</code>, <code>background-image</code></td></tr>
+                    <tr><td>Border</td><td><code>border</code>, <code>border-width</code>, <code>border-color</code>, <code>border-radius</code></td></tr>
+                    <tr><td>Spacing</td><td><code>margin</code>, <code>padding</code>, <code>gap</code></td></tr>
+                </table>
+                <pre><code>.card {
+  margin: 16px;
+  padding: 20px;
+  border: 1px solid #ccd5e0;
+  background-color: white;
+  color: #203047;
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 10: Respond to Events</h2>
+            <div class="answer">
+                <h3>Event-driven programming and listeners</h3>
+                <p><strong>Event-driven programming</strong> runs code in response to actions or occurrences, such as a click or page load. An <strong>event listener</strong> waits for a particular event on an element. <code>addEventListener()</code> registers a callback function to run when that event happens.</p>
+                <pre><code>const button = document.querySelector("#change-button");
+const message = document.querySelector("#message");
+
+button.addEventListener("click", function () {
+  message.textContent = "Button clicked!";
+});</code></pre>
+                <p>Prefer <code>addEventListener()</code> to inline <code>onclick="..."</code>: it keeps behavior out of HTML, allows multiple listeners, and supports options such as capturing and one-time listeners. In a regular function used as a listener, <code>this</code> refers to the element the listener is attached to (the event's <code>currentTarget</code>). <code>event.target</code> is the element where the event originated, which may be a child. Arrow functions do not get their own <code>this</code>; they use the surrounding value.</p>
+            </div>
+            <div class="answer">
+                <h3>Common events and event control</h3>
+                <table>
+                    <tr><th>Event</th><th>When it occurs</th></tr>
+                    <tr><td><code>input</code></td><td>As a form control's value changes, often while the user types.</td></tr>
+                    <tr><td><code>click</code></td><td>When an element is activated with a click.</td></tr>
+                    <tr><td><code>dblclick</code></td><td>When an element is double-clicked.</td></tr>
+                    <tr><td><code>mouseover</code></td><td>When a pointer enters an element or one of its descendants; it bubbles.</td></tr>
+                    <tr><td><code>mouseenter</code></td><td>When a pointer enters an element; it does not bubble and does not fire again just for entering its children.</td></tr>
+                </table>
+                <p><code>event.preventDefault()</code> cancels a browser's default action, such as navigating to a link or submitting a form. <code>event.stopPropagation()</code> prevents that event from continuing through the propagation path; it does not cancel the default action.</p>
+                <p><strong>Event bubbling</strong> is the propagation phase where an event travels from its originating element up through its ancestors. <strong>Event delegation</strong> uses this behavior: put one listener on a parent and check <code>event.target</code> (or <code>closest()</code>) to handle matching child interactions. This is useful for many or dynamically added children.</p>
+            </div>
+            <div class="answer">
+                <h3>Page loading events</h3>
+                <p><code>DOMContentLoaded</code> fires when the HTML has been parsed and the DOM is ready; it does not wait for all images and other dependent resources. The window <code>load</code> event waits until the page and its dependent resources have loaded.</p>
+                <pre><code>document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector("#change-button");
+  button.addEventListener("click", function () {
+    document.body.classList.toggle("highlight");
+  });
+});</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 11: Produce Dynamic Content</h2>
+            <div class="answer">
+                <h3>Arrays, objects, and loops</h3>
+                <p><strong>Dynamic content</strong> is content created or updated by a program while a page is running. An <strong>array</strong> stores an ordered list of values; an <strong>object</strong> stores related values as key/property pairs. Access an object property with dot notation (<code>person.name</code>) or brackets (<code>person["name"]</code>). Access an object inside an array by index, then property: <code>people[0].name</code>.</p>
+                <pre><code>const people = [
+  { name: "Ari", score: 92 },
+  { name: "Sam", score: 85 }
+];
+
+for (let i = 0; i &lt; people.length; i++) {
+  console.log(people[i].name);
+}
+
+for (const person of people) {
+  console.log(person.score);
+}
+
+people.forEach(function (person) {
+  console.log(person.name);
+});</code></pre>
+                <p>A traditional <code>for</code> loop gives you an index and control over the loop. <code>for...of</code> visits each iterable value and can be stopped with <code>break</code>. <code>forEach()</code> calls a function for each array item but does not provide the same ability to break out early.</p>
+            </div>
+            <div class="answer">
+                <h3>Templates, elements, and array methods</h3>
+                <p>A <strong>template literal</strong> uses backticks and can span lines. <code>${expression}</code> inserts an expression's value into it.</p>
+                <p>Create elements with <code>document.createElement()</code>, set their text or attributes, and append them with <code>append()</code> or <code>appendChild()</code>. Use <code>textContent</code> for plain text; do not put untrusted data into <code>innerHTML</code>.</p>
+                <pre><code>const list = document.querySelector("#people-list");
+people.forEach(function (person) {
+  const item = document.createElement("li");
+  item.textContent = `${person.name}: ${person.score}`;
+  list.append(item);
+});</code></pre>
+                <p><code>map()</code> transforms each array item and returns a new array of results. <code>filter()</code> returns a new array containing only items that pass a condition. For numeric sorting, <code>sort()</code> needs a comparison function; by default it sorts values as strings and changes the original array.</p>
+                <pre><code>const scores = [8, 100, 25];
+scores.sort((a, b) =&gt; a - b); // ascending: [8, 25, 100]
+scores.sort((a, b) =&gt; b - a); // descending</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Timers and browser storage</h3>
+                <p><code>setTimeout(callback, delay)</code> schedules a callback once after a delay in milliseconds. <code>setInterval(callback, delay)</code> schedules it repeatedly. <code>clearInterval(id)</code> stops a repeating timer using the ID returned by <code>setInterval()</code>.</p>
+                <pre><code>let seconds = 0;
+const timerId = setInterval(function () {
+  seconds += 1;
+  document.querySelector("#clock").textContent = seconds;
+  if (seconds === 10) clearInterval(timerId);
+}, 1000);</code></pre>
+                <p><code>localStorage</code> stores string data in the browser for the current site origin across page visits. It is synchronous and should not be used for sensitive data. Use <code>JSON.stringify()</code> to turn an object into a JSON string before saving, and <code>JSON.parse()</code> to turn the saved JSON string back into a value.</p>
+                <pre><code>const settings = { theme: "dark", fontSize: 16 };
+localStorage.setItem("settings", JSON.stringify(settings));
+
+const saved = localStorage.getItem("settings");
+if (saved !== null) {
+  const restoredSettings = JSON.parse(saved);
+  console.log(restoredSettings.theme);
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lecture 12: Generate Effects</h2>
+            <div class="answer">
+                <h3>Shadows and gradients</h3>
+                <p><code>box-shadow</code> adds a shadow around an element's box. <code>text-shadow</code> adds a shadow behind text glyphs. Both can take horizontal and vertical offsets, blur, and color; <code>box-shadow</code> can also have spread and an optional <code>inset</code>.</p>
+                <p>A <strong>linear gradient</strong> blends along a straight line, a <strong>radial gradient</strong> spreads outward from a center point, and a <strong>conic gradient</strong> sweeps around a center. <strong>Color stops</strong> define which colors appear and where in the gradient they transition.</p>
+                <pre><code>.card {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  background: linear-gradient(90deg, #dceeff 0%, #fff 100%);
+}
+
+h1 {
+  text-shadow: 1px 2px 3px rgb(0 0 0 / 20%);
+}</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Visibility and transitions</h3>
+                <ul>
+                    <li><code>opacity: 0</code> makes an element transparent but it still occupies layout space and can still receive interaction unless separately disabled.</li>
+                    <li><code>visibility: hidden</code> hides the element while preserving its layout space; it is generally not interactive while hidden.</li>
+                    <li><code>display: none</code> removes the element from layout and it is not shown.</li>
+                </ul>
+                <p>A <strong>CSS transition</strong> animates a property as it changes value. <code>transition-property</code> names the property, <code>transition-duration</code> sets how long it takes, <code>transition-timing-function</code> sets the rate curve, and <code>transition-delay</code> sets how long before it starts.</p>
+                <ul>
+                    <li><code>linear</code>: constant speed.</li>
+                    <li><code>ease</code>: starts and finishes more gently (the default).</li>
+                    <li><code>ease-in</code>: starts slowly and speeds up.</li>
+                    <li><code>ease-out</code>: starts quickly and slows down.</li>
+                    <li><code>ease-in-out</code>: starts and finishes slowly.</li>
+                </ul>
+                <pre><code>.button {
+  background-color: #2459a6;
+  transition: background-color 180ms ease-in-out;
+}
+
+.button:hover {
+  background-color: #173d78;
+}</code></pre>
+            </div>
+            <div class="answer">
+                <h3>Transforms and design purpose</h3>
+                <p><code>translate()</code> moves an element, <code>rotate()</code> turns it, <code>scale()</code> changes its size, and <code>skew()</code> slants it. <code>transform-origin</code> chooses the point around which a rotation, scale, or skew occurs. Transforms usually do not change the normal document flow.</p>
+                <pre><code>.tile {
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.tile:hover {
+  transform: translateY(-3px) scale(1.02);
+}</code></pre>
+                <p>Subtle shadows can suggest depth and help separate important components. Short, restrained transitions clarify that an interaction happened and make interface changes feel smoother. Keep motion purposeful and avoid effects that distract or make content hard to use.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Practical Coding Review</h2>
+            <p>For coding questions, first identify the HTML element, CSS selector, or event involved. Then check that attributes, IDs, braces, parentheses, and closing tags match.</p>
+            <h3>One compact practice example</h3>
+            <p>This example combines a form, event handling, dynamic elements, an array of objects, a timer, and local storage. It uses <code>textContent</code> so submitted text is treated as text, not HTML.</p>
+            <pre><code>&lt;form id="task-form"&gt;
+  &lt;label for="task-input"&gt;New task&lt;/label&gt;
+  &lt;input id="task-input" name="task" required&gt;
+  &lt;button type="submit"&gt;Add task&lt;/button&gt;
+&lt;/form&gt;
+&lt;ul id="task-list"&gt;&lt;/ul&gt;
+&lt;p&gt;Seconds on page: &lt;span id="seconds"&gt;0&lt;/span&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  const form = document.querySelector("#task-form");
+  const input = document.querySelector("#task-input");
+  const list = document.querySelector("#task-list");
+  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+  function renderTasks() {
+    list.replaceChildren();
+    for (const task of tasks) {
+      const item = document.createElement("li");
+      item.textContent = task.text;
+      list.append(item);
+    }
+  }
+
+  renderTasks();
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    tasks.push({ text: input.value });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    renderTasks();
+    form.reset();
+  });
+
+  let seconds = 0;
+  setInterval(function () {
+    seconds += 1;
+    document.querySelector("#seconds").textContent = seconds;
+  }, 1000);
+&lt;/script&gt;</code></pre>
+            <p>Here, <code>preventDefault()</code> stops the browser's normal form navigation. The submit callback saves the new task, redraws the list, and clears the input. The interval updates the page once per second.</p>
+
+            <h3>Quick self-check</h3>
+            <ol>
+                <li>Use <code>&lt;ol&gt;</code> for steps in sequence and <code>&lt;ul&gt;</code> for a collection without required order.</li>
+                <li>Use <code>&lt;th scope="col"&gt;</code> or <code>&lt;th scope="row"&gt;</code> for table headers.</li>
+                <li>Give informative images meaningful alternative text; add captions for video when needed.</li>
+                <li>Connect every form label to the matching control ID; remember that submitted fields need a <code>name</code>.</li>
+                <li>Use <code>addEventListener()</code> for behavior, and use <code>event.preventDefault()</code> only when the default action should be canceled.</li>
+                <li>Use <code>map()</code> to transform an array, <code>filter()</code> to select items, and a numeric comparator to sort numbers.</li>
+                <li>Serialize objects with <code>JSON.stringify()</code> before saving them in local storage.</li>
+                <li>Use margin outside an element's border and padding inside it.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>Good luck on your test! Practice writing the examples from memory, then explain why each element, attribute, selector, or method is used.</p>
+    </footer>
+</body>
+</html>

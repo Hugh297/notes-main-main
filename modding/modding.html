@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effects</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem;
+            background: #f3f4f6;
+            color: #1f2937;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            min-height: 100px;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .layered-shadow {
+            box-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.05),
+                0 4px 6px rgba(0, 0, 0, 0.05),
+                0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-demo {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #fff 0%, #000 100%);
+        }
+
+        .opacity-demo {
+            opacity: 0.5;
+        }
+
+        .visibility-demo {
+            visibility: hidden;
+        }
+
+        .display-demo {
+            display: none;
+        }
+
+        .button {
+            padding: 0.75rem 1rem;
+            border: 0;
+            border-radius: 0.5rem;
+            background: blue;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: darkblue;
+        }
+
+        .transform-stage {
+            display: flex;
+            min-height: 150px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px dashed #9ca3af;
+            border-radius: 0.5rem;
+            background: #f9fafb;
+        }
+
+        .transform-box {
+            display: grid;
+            width: 80px;
+            height: 80px;
+            place-items: center;
+            border-radius: 0.5rem;
+            background: #2563eb;
+            color: white;
+        }
+
+        .translate {
+            transform: translate(20px, 10px);
+        }
+
+        .rotate {
+            transform: rotate(45deg);
+        }
+
+        .scale {
+            transform: scale(1.2);
+        }
+
+        .skew {
+            transform: skew(10deg, 5deg);
+        }
+
+        .origin {
+            transform: rotate(25deg);
+            transform-origin: top left;
+        }
+
+        .code-note {
+            overflow-x: auto;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background: #1f2937;
+            color: #f9fafb;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <h1>CSS Effects</h1>
+            <p>Examples of shadows, gradients, visibility, transitions, and transforms.</p>
+        </header>
+
+        <section aria-labelledby="shadows-heading">
+            <h2 id="shadows-heading">Shadows</h2>
+            <div class="demo-grid">
+                <div class="card">A simple box shadow</div>
+                <div class="card layered-shadow">A layered box shadow</div>
+            </div>
+        </section>
+
+        <section aria-labelledby="gradients-heading">
+            <h2 id="gradients-heading">Gradients</h2>
+            <div class="demo-grid">
+                <div class="card gradient-demo">Linear gradient</div>
+                <div class="card"><div class="circle" role="img" aria-label="Radial gradient example"></div></div>
+            </div>
+        </section>
+
+        <section aria-labelledby="visibility-heading">
+            <h2 id="visibility-heading">Opacity, Visibility, and Display</h2>
+            <div class="demo-grid">
+                <div class="card opacity-demo">Opacity reduces transparency while keeping the element in the layout.</div>
+                <div class="card visibility-demo">Visibility: hidden, but still takes space.</div>
+                <div class="card display-demo">Display: none removes this card from the layout.</div>
+            </div>
+            <p>The empty space above shows where the hidden and display-none cards differ: only the hidden card keeps its space.</p>
+        </section>
+
+        <section aria-labelledby="transitions-heading">
+            <h2 id="transitions-heading">CSS Transitions</h2>
+            <button class="button" type="button">Hover to change color</button>
+        </section>
+
+        <section aria-labelledby="transforms-heading">
+            <h2 id="transforms-heading">2D Transforms</h2>
+            <div class="demo-grid">
+                <div class="transform-stage"><div class="transform-box translate">Move</div></div>
+                <div class="transform-stage"><div class="transform-box rotate">Rotate</div></div>
+                <div class="transform-stage"><div class="transform-box scale">Grow</div></div>
+                <div class="transform-stage"><div class="transform-box skew">Slant</div></div>
+                <div class="transform-stage"><div class="transform-box origin">Origin</div></div>
+            </div>
+        </section>
+
+        <section aria-labelledby="positioning-heading">
+            <h2 id="positioning-heading">Positioning, Alignment, and Overflow</h2>
+
+            <h3>Positioning</h3>
+            <p>Static positioning is the default. Relative positioning offsets an element from its normal position.</p>
+            <pre class="code-note"><code>.box {
+    position: static;
+}
+
+.box {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}</code></pre>
+
+            <p>Absolute positioning places an element relative to its nearest positioned ancestor.</p>
+            <pre class="code-note"><code>.box {
+    position: absolute;
+    top: 0;
+    right: 0;
+}</code></pre>
+
+            <p>Fixed positioning is relative to the viewport; sticky positioning sticks after reaching its offset.</p>
+            <pre class="code-note"><code>.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}</code></pre>
+
+            <p>Use <code>z-index</code> to control stacking order of positioned elements.</p>
+            <pre class="code-note"><code>.modal {
+    z-index: 100;
+}
+
+.overlay {
+    z-index: 99;
+}</code></pre>
+
+            <h3>Alignment</h3>
+            <p>Center a fixed-width block with auto margins, center inline content with text alignment, or center items in a grid.</p>
+            <pre class="code-note"><code>.box {
+    margin: 0 auto;
+    width: 300px;
+}
+
+.parent {
+    text-align: center;
+}
+
+.parent {
+    display: grid;
+    place-items: center;
+}</code></pre>
+
+            <h3>Overflow</h3>
+            <p>These are alternative overflow settings; use the one that fits the desired behavior.</p>
+            <pre class="code-note"><code>.container {
+    overflow: hidden; /* Clip */
+    overflow: scroll; /* Always scrollbars */
+    overflow: auto; /* Scroll when needed */
+}</code></pre>
+        </section>
+    </main>
+</body>
+</html>

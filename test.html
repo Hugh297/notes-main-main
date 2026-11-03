@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Page</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="myBtn" type="button">Click Me</button>
+    <div id="box"></div>
+
+    <script>
+        const button = document.getElementById("myBtn");
+        const box = document.getElementById("box");
+        let isBlue = true;
+
+        button.addEventListener("click", function () {
+            box.style.backgroundColor = isBlue ? "red" : "blue";
+            isBlue = !isBlue;
+        });
+
+        box.addEventListener("dblclick", function () {
+            box.style.backgroundColor = "white";
+        });
+    </script>
+</body>
+</html>
