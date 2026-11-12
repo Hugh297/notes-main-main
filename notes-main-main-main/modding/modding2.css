@@ -1,0 +1,99 @@
+box-shadow: offset-x offset-y blur-radius spread-radius color;
+
+.card {
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+0 = no horizontal offset
+4px = vertical drop
+6px = blur amount
+rgba(0,0,0,0.1) = subtle black
+
+Layered Shadows
+.card {
+box-shadow:
+0 1px 2px rgba(0,0,0,0.05),
+0 4px 6px rgba(0,0,0,0.05),
+0 10px 20px rgba(0,0,0,0.05);
+}
+
+Text Shadow
+h1 {
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+Linear Gradients
+
+.header {
+background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+style.css
+
+135deg = angle 0 is bottom-to-top, 90 is left-to-right
+Color stops define transition points
+Can have unlimited color stops
+
+Radial Gradients
+
+.circle {
+background: radial-gradient(circle at center, #fff 0%, #000 100%);
+}
+style.css
+
+Shapes: circle or ellipse
+Position: at top left, at center
+Useful for: spotlights, orb effects
+
+Opacity vs. Visibility
+
+.fade { opacity: 0.5; } /* Still clickable, takes space */
+.hidden { visibility: hidden; } /* Invisible but takes space */
+.gone { display: none; } /* Removed from flow */
+style.css
+
+opacity: 0 (transparent) to 1 (opaque)
+visibility: visible or hidden
+display: none: removes from document flow entirely
+
+CSS Transitions
+
+.button {
+background: blue;
+transition: background 0.3s ease;
+}
+.button:hover {
+background: darkblue;
+}
+style.css
+
+transition-property: what to animate
+transition-duration: how long
+transition-timing-function: speed curve
+transition-delay: wait before starting
+
+2D Transforms
+
+.box {
+transform: translate(50px, 100px); /* Move */
+transform: rotate(45deg); /* Rotate */
+transform: scale(1.5); /* Grow */
+transform: skew(10deg, 5deg); /* Slant */
+}
+style.css
+
+translate: moves without affecting layout
+rotate: spins around center (default)
+scale: grows or shrinks
+skew: slants on X and Y axes
+
+Transform Origin
+
+.box {
+transform-origin: top left;
+transform: rotate(45deg);
+}
+style.css
+
+Changes the pivot point for transforms
+Default: center center
+Values: keywords, percentages, lengths
+

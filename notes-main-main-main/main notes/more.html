@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media and Image HTML Examples</title>
+</head>
+<body>
+<img src="dog.jpg" alt="Golden retriever">
+<!-- Image with context -->
+<figure>
+<img src="dog.jpg" alt="Golden retriever">
+<figcaption>Max, a 3-year-old golden
+retriever, loves the beach.</figcaption>
+</figure>
+<picture>
+<source media="(min-width: 800px)"
+srcset="large.jpg">
+<source media="(min-width: 400px)"
+srcset="medium.jpg">
+<img src="small.jpg" alt="Responsive image
+example">
+</picture>
+<picture>
+<source srcset="image.jpg" media="(min-width:
+600px)" type="image/jpeg">
+<img srcset="small.jpg 480w, medium.jpg 800w,
+large.jpg 1200w"
+sizes="(max-width: 600px) 480px,
+(max-width: 1000px) 800px, 1200px"
+src="fallback.jpg" alt="Responsive
+image">
+</picture>
+<object data="document.pdf" type="application/pdf"
+width="600" height="400">
+<p>Your browser does not support PDFs. <a
+href="document.pdf">Download here</a>.</p>
+</object>
+<object data="movie.swf"
+type="application/x-shockwave-flash" width="400"
+height="300">
+<param name="quality" value="high">
+<param name="loop" value="true">
+<param name="autoplay" value="true">
+</object>
+<embed src="animation.swf"
+type="application/x-shockwave-flash"
+width="400" height="300">
+<iframe
+src="https://www.google.com/maps/embed"
+width="600" height="450" title="Google
+Map">
+</iframe>
+<audio controls>
+<source src="music.mp3"
+type="audio/mpeg">
+<source src="music.ogg"
+type="audio/ogg">
+<p>Your browser does not support
+audio. <a href="music.mp3">Download
+MP3</a>.</p>
+</audio>
+<audio controls autoplay loop muted
+preload="auto">
+<source src="song.mp3"
+type="audio/mpeg">
+</audio>
+<video width="640" height="360"
+controls poster="thumbnail.jpg">
+<source src="movie.mp4"
+type="video/mp4">
+<source src="movie.webm"
+type="video/webm">
+<p>Your browser does not support
+video. <a href="movie.mp4">Download
+MP4</a>.</p>
+</video>
+<video controls autoplay loop muted
+playsinline preload="metadata">
+<source src="video.mp4"
+type="video/mp4">
+</video>
+<video controls>
+<source src="movie.mp4"
+type="video/mp4">
+<track kind="subtitles"
+src="subtitles-en.vtt" srclang="en"
+label="English" default>
+<track kind="captions"
+src="captions-es.vtt" srclang="es"
+label="Español">
+</video>
+<img src="world-map.jpg" alt="World Map" usemap="#worldmap" width="800" height="400">
+<map name="worldmap">
+<area shape="rect" coords="50,50,200,150" href="north-america.html" alt="North America">
+<area shape="circle" coords="400,200,50" href="europe.html" alt="Europe">
+<area shape="poly" coords="300,100,350,150,320,200" href="asia.html" alt="Asia">
+</map>
+</body>
+</html>
